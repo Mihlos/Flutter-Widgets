@@ -1,7 +1,7 @@
 # Flutter-Widgets
 Some Flutter widgets to practice.
 
-### Textfield() https://docs.flutter.io/flutter/material/TextField-class.html
+## Textfield() https://docs.flutter.io/flutter/material/TextField-class.html
 https://medium.com/flutter-community/a-deep-dive-into-flutter-textfields-f0e676aaab7a
 
 - Permite al usuario ingresar texto.
@@ -23,3 +23,35 @@ TextField(
   onSubmitted: (value) {},
   ```
 
+## AlertDialog()  https://docs.flutter.io/flutter/material/AlertDialog-class.html
+https://medium.com/@nils.backe/flutter-alert-dialogs-9b0bb9b01d28
+
+- Permite mostrar un pop up, alert... Que realiza varias funciones de mensaje, pregunta...
+- **ShowDialog .-
+``` Dart
+showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog();
+        });
+```
+En la propiedad AlertDialog se puede configurar totalmente la alerta:
+- title
+- content
+- actions //Recibe una serie de Widgets. En la que incluyo un botón.
+
+``` Dart
+AlertDialog dialog = AlertDialog(
+      title: Text('Alerta enviada:'),
+      content: Text(text), //Alert dialog body
+      actions: <Widget>[
+        FlatButton.icon(
+            onPressed: () {
+              print('hola');
+              Navigator.of(context).pop();  //Close alert
+            },
+            icon: Icon(Icons.print),
+            label: Text('Print'))
+      ],
+    );
+```
