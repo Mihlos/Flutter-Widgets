@@ -27,7 +27,7 @@ TextField(
 https://medium.com/@nils.backe/flutter-alert-dialogs-9b0bb9b01d28
 
 - Permite mostrar un pop up, alert... Que realiza varias funciones de mensaje, pregunta...
-- **ShowDialog .-
+- **ShowDialog** .-
 ``` Dart
 showDialog(
         context: context,
@@ -55,3 +55,22 @@ AlertDialog dialog = AlertDialog(
       ],
     );
 ```
+
+## Stepper()  https://docs.flutter.io/flutter/material/Stepper-class.html
+https://medium.com/flutterpub/steppers-and-form-in-flutter-49cda857230c
+
+- Muestra una serie de pasos para ir realizando acciones punto a punto.
+- **type:** StepperType.
+- **currentStep:**
+- **steps:** //El propio Widget, los pasos.
+	- Declarar los steps:
+	``` Dart
+	List<Step> mySteps = [
+    Step(title: Text('Paso 1'), content: Text('Aprender Flutter')),
+    Step(title: Text('Paso 2'), content: Text('Desarrollar App')),
+    Step(title: Text('Paso 3'), content: Text('Publicar App')),
+	];
+	``` 
+- **onStepCancel: (){}**
+- **onStepContinue: (){}**
+- **onStepTapper: (step){}**
