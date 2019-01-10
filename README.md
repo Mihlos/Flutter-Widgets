@@ -74,3 +74,37 @@ https://medium.com/flutterpub/steppers-and-form-in-flutter-49cda857230c
 - **onStepCancel: (){}**
 - **onStepContinue: (){}**
 - **onStepTapper: (step){}**
+
+## Tabs() https://docs.flutter.io/flutter/material/TabBar-class.html
+https://medium.com/@worthply/flutter-tab-bar-60cb9848ad08
+https://flutterdoc.com/widgets-tabbar-5f2ae6777ee4
+
+- Pestañas que se suelen incluir en la appBar en bottom (bottom: TabBar()). 
+
+- Es imprescindible especificar un controlador para indicar el nº de pestañas etc
+- Con el **DefaultTabController** ya está todo configurado.
+- Lo primero que me llama la atencion es que empezamos con el DefaultTabControler y su hijo es el Scaffold
+hasta ahora tod iba incluido en el Scaffold.
+
+**length** the number of tabs that our controller is displaying
+**TabBarView** Para especificar lo que se ve en cada pestaña.
+
+``` Dart
+home: DefaultTabController(
+        //En lugar de poner una cantidad fija de tabs crea un array para ir añadiendo.
+        length: choices.length,
+        child: Scaffold(
+          appBar: AppBar(
+            title:  Text('Tabbed AppBar'),
+            bottom: TabBar(
+              isScrollable: true,
+              tabs: choices.map((Choice element) {
+                return Tab(
+				
+				
+				
+	body: TabBarView(			
+```
+
+
+
