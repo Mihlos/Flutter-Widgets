@@ -86,8 +86,8 @@ https://flutterdoc.com/widgets-tabbar-5f2ae6777ee4
 - Lo primero que me llama la atencion es que empezamos con el DefaultTabControler y su hijo es el Scaffold
 hasta ahora tod iba incluido en el Scaffold.
 
-**length** the number of tabs that our controller is displaying
-**TabBarView** Para especificar lo que se ve en cada pestaña.
+- **length** the number of tabs that our controller is displaying
+- **TabBarView** Para especificar lo que se ve en cada pestaña.
 
 ``` Dart
 home: DefaultTabController(
@@ -105,6 +105,28 @@ home: DefaultTabController(
 				
 	body: TabBarView(			
 ```
+
+## Navigator() https://docs.flutter.io/flutter/widgets/Navigator-class.html
+https://flutter.io/docs/cookbook/navigation/navigation-basics
+https://medium.com/flutter-community/flutter-push-pop-push-1bb718b13c31
+
+Navigator nos permite crear una ruta con las pantallas por las que pasamos en la aplicacion.
+Funciona como el boton de atrás de cualquier navegador. Va poniendo la ultima página donde se ha estado en la
+primera posición de la ruta. Para ir hacia atras borramos la primera posición. Tambien podemos ir a una posición directamente.
+
+```
+onPressed: () {
+    Navigator.push(
+		context,
+        MaterialPageRoute(builder: (context) => SecondScreen()));
+}),
+```
+El metodo **push** añade una ruta al stack de rutas controlado por **Navigator**
+**MaterialPageRoute** La ruta se la indicamos con este objeto porque ya nos proporciona una animacion y le indicamos la ruta.
+
+Para volver podemos indicar **Navigator.pop** para borrar la última ruta y así volverá a la anterior.
+
+
 
 
 
