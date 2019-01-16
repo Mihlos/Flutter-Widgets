@@ -114,19 +114,32 @@ Navigator nos permite crear una ruta con las pantallas por las que pasamos en la
 Funciona como el boton de atrás de cualquier navegador. Va poniendo la ultima página donde se ha estado en la
 primera posición de la ruta. Para ir hacia atras borramos la primera posición. Tambien podemos ir a una posición directamente.
 
-```
+``` Dart
 onPressed: () {
     Navigator.push(
 		context,
         MaterialPageRoute(builder: (context) => SecondScreen()));
 }),
 ```
-El metodo **push** añade una ruta al stack de rutas controlado por **Navigator**
-**MaterialPageRoute** La ruta se la indicamos con este objeto porque ya nos proporciona una animacion y le indicamos la ruta.
+- **push** añade una ruta al stack de rutas controlado por **Navigator**
+- **MaterialPageRoute** La ruta se la indicamos con este objeto porque ya nos proporciona una animacion y le indicamos la ruta.
 
-Para volver podemos indicar **Navigator.pop** para borrar la última ruta y así volverá a la anterior.
+- **Navigator.pop** para borrar la última ruta y así volverá a la anterior.
 
+## SnackBar() https://flutter.io/docs/cookbook/design/snackbars
 
+Mensaje que aparece en la parte inferior para notificar algo.
 
+- Es necesario que esté contenido en un Scaffold
+- Scaffold.of(context).showSnackBar(SnackBar());
+- **content**
+- **duration**
+- **action**
+	- label
+	- onPressed
 
+He tenido problemas con el context.
+Al principio he creado todo en un mismo StateLess y daba error de que no encontraba el Scaffold.
+Al separarlo tal y como está el ejemplo no da error.
+Tengo que revisar mas el tema de context y por què no llegaba a reconocer que estaba contenido en el. El scope etc
 
